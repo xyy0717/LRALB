@@ -78,7 +78,7 @@ while iter < 101
     ZW      = Z * W;
     LAC     = DA_vec .* C - A * C;     % LA*C，避免显式构建大矩阵
     Delta_C = 2 * (hatY - ZW) + 2 * beta * LAC;
-    C       = min(max(C - mu * Delta_C, Y), 1);
+    C       = min(max(C - mu * Delta_C, 1), Y);
 
     %% 更新 theta
     thetaA = ZW - Y;
