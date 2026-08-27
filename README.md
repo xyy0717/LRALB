@@ -1,4 +1,4 @@
-# Comparison of Algorithm Descriptions
+# Description of Comparative Algorithms
 
 This document provides a detailed description of the comparative algorithms and related parameter settings used in this paper, covering multi-label feature selection (MFS), partial multi-label learning (PML), and partial multi-label feature selection (PMFS).
 
