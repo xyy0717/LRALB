@@ -33,7 +33,7 @@ end
 Z     = init_approx_orthogonal_nonnegative(n_sam, k);
 H     = rand(n_fea, k);
 W     = rand(k, n_lab);
-C     = zeros(n_sam, n_lab);
+C     = Y;
 theta = 0;
 W1    = H * W;
 
@@ -43,7 +43,7 @@ obji  = 1;
 
 while iter < 101
     %% 更新 mu
-    mu = 1 / (theta + beta * lambda_max);
+    mu = 1 / (theta^2 + beta * lambda_max);
 
     %% 更新 hatY
     hatY = theta * C + (1 - theta) * Y;
@@ -77,8 +77,8 @@ while iter < 101
     %% 更新 C —— 优化: DA_vec.*C 替代 diag(DA)*C
     ZW      = Z * W;
     LAC     = DA_vec .* C - A * C;     % LA*C，避免显式构建大矩阵
-    Delta_C = 2 * (hatY - ZW) + 2 * beta * LAC;
-    C       = min(max(C - mu * Delta_C, 1), Y);
+    Delta_C = 2 * theta * (hatY - ZW) + 2 * beta * LAC;
+    C = min(max(C - mu * Delta_C, 0), Y);
 
     %% 更新 theta
     thetaA = ZW - Y;
