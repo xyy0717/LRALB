@@ -2,7 +2,7 @@ clc; clear;
 addpath(genpath(pwd));
 
 
-load("Medical0.5.mat")
+load("Medical1.5.mat")
 
 nfold = 5;
 data = columnMinMaxNormalization(data);
@@ -100,10 +100,10 @@ fprintf('========== 预计算完成 ==========\n\n');
 %  ===============================================================
 total_tic   = tic;
 
-alpha = 0.01;
-beta  = 0.001;
-gamma = 1;
-tao   = fix(0.1 * num_feature);
+alpha = 1;
+beta  = 1;
+gamma = 10;
+tao   = fix(0.2 * num_feature);
 
 results = zeros(nfold, 7);
 t_param = tic;
