@@ -2,7 +2,7 @@
 
 This document provides a detailed description of the comparative algorithms and related parameter settings used in this paper, covering multi-label feature selection (MFS), partial multi-label learning (PML), and partial multi-label feature selection (PMFS).
 
-**GRRO.** GRRO jointly considers feature relevance, label relevance, and feature redundancy in a unified optimization framework to efficiently obtain globally optimal feature subsets. By optimizing global relevance and redundancy relationships, it aims to select informative features while suppressing redundant ones in multilabel learning tasks. Its parameters $\alpha_1$ and $\beta$ are tuned within $\{0.001, 0.01, \ldots, 1000\}$ to achieve optimal performance.
+**GRRO.** GRRO jointly considers feature relevance, label relevance, and feature redundancy in a unified optimization framework to efficiently obtain globally optimal feature subsets. By optimizing global relevance and redundancy relationships, it aims to select informative features while suppressing redundant ones in multilabel learning tasks. Its parameters $\alpha_1$ and $\beta$ are tuned within $\\{0.001, 0.01, \ldots, 1000\\}$ to achieve optimal performance.
 
 **SSFS.** SSFS captures the shared latent structure between features and labels by introducing a constrained latent structure shared term. It further incorporates graph regularization to preserve structural information, so that selected features can better reflect the intrinsic relationship between the feature space and the label space. Its parameters $\alpha$, $\beta$, and $\gamma$ are tuned within $\{0.001, 0.01, \ldots, 1000\}$ to achieve optimal performance.
 
